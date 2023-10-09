@@ -13,10 +13,10 @@ import {
 } from './types/sections';
 
 export const greetings: GreetingsType = {
-  name: 'Solavar AI',
-  title: "Hello, I'm Solavar AI",
+  name: 'Solana Education',
+  title: "Hello, I'm Solana Education",
   description:
-    "Solavar AI is a powerful artificial intelligence (AI) application that transforms your ideas, descriptions, and images into impressive avatar images. You don't need to be an artist or have graphic design skills because Solavar AI does all the work for you.",
+    "",
   resumeLink:
     'https://solana-ai-avatar.vercel.app/',
 };
@@ -139,20 +139,6 @@ export const KeyFeatureInfo: KeyFeatureType[] = [
       'You can customize avatars by changing colors, backgrounds, or other features to reflect your personality.',
     ],
   },
-  {
-    title: 'Design Multiple Avatar Types',
-    desc: '',
-    descBullets: [
-      'Create avatars from novels, movies, video games, and various other genres to suit your purposes.',
-    ],
-  },
-  {
-    title: 'Multi-Language Support',
-    desc: '',
-    descBullets: [
-      'AvatarAI supports multiple languages, making it easy for you to create avatars wherever you are in the world.',
-    ],
-  },
 ];
 
 export const member: MemberType[] = [
@@ -163,48 +149,13 @@ export const member: MemberType[] = [
     date: '09/2023',
     desc: '',
   },
-   {
-    role: 'Front-End Developer',
-    name: 'PS19944 - Nguyễn Quốc Huy',
-    avatar: '/img/icons/common/nguyenquochuy.png',
-    date: '09/2023',
-    desc: '',
-  },
-   {
-    role: 'Back-End Developer',
-    name: 'PS20032 - Đặng Hoàng Nam',
-    avatar: '/img/icons/common/danghoangnam.png',
-    date: '09/2023',
-    desc: '',
-  },
-   {
-    role: 'Back-End Developer',
-    name: 'PS19642 - Bùi Tô Việt Thắng',
-    avatar: '/img/icons/common/buitovietthang.png',
-    date: '09/2023',
-    desc: '',
-  },
-   {
-    role: 'Back-End Developer',
-    name: 'PS20817 - Đặng Ngọc Sơn',
-    avatar: '/img/icons/common/dangngocson.png',
-    date: '09/2023',
-    desc: '',
-  },
-   {
-    role: 'Back-End Developer',
-    name: 'PS21565 - Nguyễn Tiến Đạt',
-    avatar: '/img/icons/common/nguyentiendat.png',
-    date: '09/2023',
-    desc: '',
-  },
 ];
 
 export const feedbacks: FeedbackType[] = [
   {
-    name: 'John Smith',
+    name: '',
     feedback:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, vel illo. Eum magnam beatae ratione eos natus accusamus unde pariatur fugiat at facilis, modi molestiae? Labore odio sit eligendi. Tenetur.',
+      '',
   },
 ];
 
@@ -222,8 +173,7 @@ export const seoData: SEODataType = {
   keywords: [
     'Solana',
     'AI',
-    'Avatar',
-    'Solavar',
-    'Solavar AI',
+    'Education',
+    'Solana Education',
   ],
 };
