@@ -36,7 +36,7 @@ const Post = () => {
             <div className="col px-0">
               <Row>
                 <h1 className="display-3 text-white">
-                  Tôi là ai, tôi đang làm gì?
+                  Mình là ai, các bạn đang làm gì ở đây?
                 </h1>
                 <p className="lead text-white">
                   Xin chào các bạn, tôi là sinh viên K17 trường FPT Polytecnic
