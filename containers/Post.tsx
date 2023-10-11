@@ -45,7 +45,7 @@ const Post = () => {
                   chức. Vậy mình đang làm gì? Có nhiều bạn cũng thắc mắc với câu
                   hỏi này khi tìm tới đây. Mong muốn của các bạn chắc hẳn là tìm
                   được một định hướng và hướng đi cho dự án BlockChain sắp tới.
-                  mình đoán thế! Nếu chúng ta đã chung tiếng nói thì sao không
+                  Mình đoán thế! Nếu chúng ta đã chung tiếng nói thì sao không
                   cùng đi vào phân tích và xây dựng hướng đi và ý tưởng cho dự
                   án của các bạn. Mình chỉ dựa trên những kinh nghiệm đã đúc kết
                   được qua quá trình học tập không dài vì thế sẽ không tránh

@@ -67,7 +67,7 @@ export const contentSrc = {
        }]
     },{  
        title: '5. Về cuộc thi Hackathon của SuperTeam',
-       description:"Nếu như các bạn đang trong kì thực tập giống mình thì các bạn hãy chú trọng ý tưởng bởi vì 2-3 tháng là quá ngắn cho việc chuẩn bị mọi thứ. Vậy cho nên thật lòng hãy chú tâm vào việc xây dựng ý tưởng và thể hiện nó một cách dễ hiểu và chi tiết nhất có thể. Còn nếu bạn muốn học hỏi chuyên sâu và có 1 kế hoạch bài bản thì hãy nên tập hợp đội nhóm để phân công công việc để làm thì mọi thứ sẽ dễ dàng hơn. Cuộc thi cũng chỉ là cuộc thi quan trọng là chúng ta học được gì qua những thử thách đó chứ giải thưởng cũng quan trọng đấy những không quan trọng bằng những kiến thức tích lũy được.",
+       description:"Nếu như các bạn đang trong kì thực tập giống mình thì các bạn hãy chú trọng ý tưởng bởi vì 2-3 tháng là quá ngắn cho việc chuẩn bị mọi thứ. Vậy cho nên thật lòng hãy chú tâm vào việc xây dựng ý tưởng và thể hiện nó một cách dễ hiểu và chi tiết nhất có thể. Còn nếu bạn muốn học hỏi chuyên sâu và có 1 kế hoạch bài bản thì hãy nên tập hợp đội nhóm để phân công công việc để làm thì mọi thứ sẽ dễ dàng hơn. Cuộc thi cũng chỉ là cuộc thi quan trọng là chúng ta học được gì qua những thử thách đó chứ giải thưởng cũng quan trọng đấy,nhưng không quan trọng bằng những kiến thức tích lũy được.",
        links : [{
         name : "SuperTeam",
         link : "https://vn.superteam.fun/",
