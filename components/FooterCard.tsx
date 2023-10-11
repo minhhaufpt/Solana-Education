@@ -17,9 +17,11 @@ const FooterCard = () => {
               />
             </Col>
             <Col lg="8" className="order-lg-1">
-              <h2 className="text-white">Solavar AI</h2>
+              <h2 className="text-white">Solana Education</h2>
               <SocialLinks />
-              <p className="text-white mt-3">Copyright by Solavar AI © 2023</p>
+              <p className="text-white mt-3">
+                Copyright by Solana Education © 2023
+              </p>
             </Col>
           </Row>
         </div>

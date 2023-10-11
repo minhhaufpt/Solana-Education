@@ -16,7 +16,7 @@ export const greetings: GreetingsType = {
   name: 'Solana Education',
   title: "Hello, I'm Solana Education",
   description:
-    "",
+    "Please bring future technology into training",
   resumeLink:
     'https://solana-ai-avatar.vercel.app/',
 };
@@ -38,7 +38,7 @@ export const socialLinks: SocialLinksType = {
 
 export const skillsSection: SkillsSectionType = {
   title: 'What technology do I have?',
-  subTitle: 'CREATE SEPARATE AVATAR',
+  subTitle: '',
   data: [
     {
       title: 'Information Security',
@@ -67,20 +67,13 @@ export const skillsSection: SkillsSectionType = {
       title: 'Platform AI',
       lottieAnimationFile: '/lottie/skills/cloudinfra.json',
       skills: [
-        emoji('⚡ Generate AI images'),
-        emoji('⚡ Fast and convenient'),
         emoji('⚡ Smart data processing with ChatGPT'),
       ],
       softwareSkills: [
         {
-          skillName: 'Imaginen AI',
-          iconifyTag: 'cryptocurrency-color:aion',
-        },
-        {
           skillName: 'ChatGPT',
           iconifyTag: 'ri:openai-fill',
         },
-
       ],
     },
     {
@@ -164,7 +157,7 @@ export const showContactUs: boolean = true;
 
 // See object prototype on /types/section.ts page
 export const seoData: SEODataType = {
-  title: 'Solavar AI',
+  title: 'Solana Education',
   description:
     'Internship Project',
   author: 'Nguyễn Minh Hậu',
