@@ -36,18 +36,18 @@ const Post = () => {
             <div className="col px-0">
               <Row>
                 <h1 className="display-3 text-white">
-                  Mình là ai, các bạn đang làm gì ở đây?
+                  Tôi là ai, các bạn đang làm gì ở đây?
                 </h1>
                 <p className="lead text-white">
-                  Xin chào các bạn, tôi là sinh viên K17 trường FPT Polytecnic
+                  Xin chào các bạn, mình là sinh viên K17 trường FPT Polytecnic
                   chuyên ngành ứng dụng phần mềm. Cũng là thành viên của nhóm đã
                   tham gia 2 trong số các cuộc thi Hackathon của SuperTeam tổ
-                  chức. Vậy tôi đang làm gì? Có nhiều bạn cũng thắc mắc với câu
+                  chức. Vậy mình đang làm gì? Có nhiều bạn cũng thắc mắc với câu
                   hỏi này khi tìm tới đây. Mong muốn của các bạn chắc hẳn là tìm
                   được một định hướng và hướng đi cho dự án BlockChain sắp tới.
-                  Tôi đoán thế! Nếu chúng ta đã chung tiếng nói thì sao không
+                  mình đoán thế! Nếu chúng ta đã chung tiếng nói thì sao không
                   cùng đi vào phân tích và xây dựng hướng đi và ý tưởng cho dự
-                  án của các bạn. Tôi chỉ dựa trên những kinh nghiệm đã đúc kết
+                  án của các bạn. Mình chỉ dựa trên những kinh nghiệm đã đúc kết
                   được qua quá trình học tập không dài vì thế sẽ không tránh
                   khỏi thiếu sót và sai lầm. Mọi góp ý của các bạn đều là những
                   kiến thức quý giá để cho mọi người cùng học tập.

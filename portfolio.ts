@@ -28,7 +28,7 @@ export const openSource = {
 export const contact = {};
 
 export const socialLinks: SocialLinksType = {
-  url: 'https://solana-ai-avatar.vercel.app',
+  url: 'https://solana-education.vercel.app',
   github: 'https://github.com/minhhaufpt',
   instagram: 'https://www.instagram.com/haunguyen.vn.2k3/',
   facebook: 'https://www.facebook.com/profile.php?id=100037362923065',
