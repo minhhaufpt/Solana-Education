@@ -18,7 +18,7 @@ export const greetings: GreetingsType = {
   description:
     "Please bring future technology into training",
   resumeLink:
-    'https://solana-ai-avatar.vercel.app/',
+    'https://solana-education.vercel.app/posts',
 };
 
 export const openSource = {
