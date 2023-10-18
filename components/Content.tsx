@@ -29,7 +29,9 @@ const Content = () => {
             </Row>
           );
         })}
-        <p className="lead">Cảm ơn các bạn đã đọc bài viết!</p>
+        <Fragment>
+          <p className="lead">Cảm ơn các bạn đã đọc bài viết!</p>
+        </Fragment>
       </Container>
     )
   );

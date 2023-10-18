@@ -48,6 +48,13 @@ export type SkillBarsType = {
   Stack: string;
   progressPercentage: string;
 };
+export type Family = {
+  name: string;
+  role :string;
+  lottieAnimationFile: string;
+  wish: string
+};
+
 
 // * EDUCATION SECTION
 

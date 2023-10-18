@@ -10,6 +10,7 @@ import {
   SocialLinksType,
   GreetingsType,
   KeyFeatureType,
+  Family,
 } from './types/sections';
 
 export const greetings: GreetingsType = {
@@ -117,6 +118,45 @@ export const SkillBars: SkillBarsType[] = [
   },
 ];
 
+export const FamilyMember: Family[] = [
+  {
+    name: '',
+    role : "Người Bà", 
+    lottieAnimationFile: '/lottie/grandmother.json', 
+    wish: 'Bà là người sinh thành của đấng sinh thành vì thế không thể nào phủ nhận sự kính trọng của con đối với bà. Nếu bà có nghe được những lời này của con. Con rất mong nghe được bà gọi "cháu ngoan của bà". Con xin lỗi vì đã không trưởng thành nhanh hơn để bà bớt phải lo lắng. Nếu bà có thể lắng nghe được lời con nói thì con xin chúc bà có một ngày thật vui vẻ và mãi bên con. "Còn không" con mong bà ở nơi xa vẫn sẽ nhớ đến đứa cháu của bà.'
+  },
+  {
+    name: '',
+    role : "Người Mẹ", 
+    lottieAnimationFile: '/lottie/mother.json', 
+    wish: 'Người Mẹ là một chức trách thiên liêng và vô cùng cao quý. Con xin cảm ơn ân dưỡng dục, cảm ơn vì những đánh đổi của mẹ dành cho con. Con xin lỗi vì những lỗi lầm của con làm mẹ phải buồn. Ngày 20/10 chính là ngày mà con ghi nhớ những công ơn đó của mẹ. Con xin kính chúc mẹ một ngày 20-10 tràn đầy niềm vui và hạnh phúc. Mẹ là người phụ nữ tuyệt vời nhất trong cuộc đời con. Con yêu mẹ nhiều lắm !!!'
+  },
+   {
+    name: '', 
+     role : "Chị gái", 
+    lottieAnimationFile: '/lottie/sister.json', 
+    wish: 'Nếu không có mẹ bên cạnh thì người luôn chở che, dạy bảo em chính là chị. Cảm ơn vì đã bỏ qua những sai lầm của em, cảm ơn vì luôn ở bên cạnh và hỗ trợ em trong mọi thử thách. Chúc cho chị gái có một ngày đầy niềm vui và hạnh phúc, như tình cảm mà em dành cho chị gái vậy, luôn ấm áp và không bao giờ phai mờ.'
+  },
+   {
+    name: '', 
+     role : "Em gái", 
+    lottieAnimationFile: '/lottie/youngsister.json', 
+    wish: 'Chưa bao giờ cảm giác làm anh làm chị là dễ dàng cả. Nhưng với trách nhiệm được đặt lên vai anh chị thì chưa bao giờ anh chị không lo nghĩ cho người em của mình, cho nên cố gắng trưởng thành và ngoan ngoãn hơn nhé.Em luôn là niềm tự hào và niềm vui trong cuộc sống của con. Chúc em gái có một ngày đặc biệt, tràn đầy tiếng cười và vui tươi và anh chị vẫn luôn dõi theo bước chân của em.'
+  },
+  {
+    name: '', 
+     role : "Bạn gái", 
+    lottieAnimationFile: '/lottie/heart1.json', 
+    wish: 'Anh không biết chúng ta có thể ở bên cạnh bao lâu nữa nhưng anh vẫn mong chúng ta sẽ đến với nhau vào một ngày không xa. Anh muốn gửi lời chúc đặc biệt đến người yêu của mình. Em là ngọn lửa ấm áp trong cuộc đời anh, luôn đem lại niềm vui và hạnh phúc không ngừng. Chúc người yêu của anh có một ngày đáng nhớ, nhiều niềm vui và mãi mãi là tình yêu của anh.'
+  },
+  {
+    name: '', 
+     role : "Bạn bè nữ", 
+    lottieAnimationFile: '/lottie/friend.json', 
+    wish: 'Với vị trí là những người bạn, chắc chúng ta không cần nói nhiều nhỉ. Chúng ta vốn quá hiểu nhau nên mình sẽ nói ngắn ngọn. Mình luôn luôn trân trọng các bạn. Mình mong các bạn có một ngày thật đáng nhớ, chúc các bạn luôn tươi trẻ, hồn nhiên, đáng yêu như lúc chúng ta gặp nhau và chúng ta mãi mãi sẽ là những người bạn của nhau.'
+  },
+];
+
 export const KeyFeatureInfo: KeyFeatureType[] = [
   {
     title: 'Automatic Avatar Creation',
@@ -151,6 +191,8 @@ export const feedbacks: FeedbackType[] = [
       '',
   },
 ];
+
+
 
 // option to hide or show the ContactUs component
 export const showContactUs: boolean = true;
