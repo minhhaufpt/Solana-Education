@@ -10,8 +10,10 @@ import {
   FormGroup,
   Input,
   Alert,
+  Fade,
 } from 'reactstrap';
 import Swal from 'sweetalert2';
+import DisplayLottie from '../components/DisplayLottie';
 const Date20_10 = () => {
   useEffect(() => {
     document.documentElement.scrollTop = 0;
@@ -72,7 +74,7 @@ const Date20_10 = () => {
           <form ref={form} onSubmit={sendRequestPromt}>
             <Container className="py-lg-md d-flex">
               <Row className="justify-content-center">
-                <Col lg="12">
+                <Col lg="8" className="order-2 order-lg-1">
                   <Card className="bg-gradient-secondary shadow">
                     <CardBody className="p-lg-5">
                       <h4 className="mb-1">
@@ -105,6 +107,11 @@ const Date20_10 = () => {
                       </div>
                     </CardBody>
                   </Card>
+                </Col>
+                <Col lg="4" className="order-1 order-lg-2">
+                  <Fade left duration={1500}>
+                    <DisplayLottie animationPath="/lottie/tamthiep.json" />
+                  </Fade>
                 </Col>
               </Row>
             </Container>
