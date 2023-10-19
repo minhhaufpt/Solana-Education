@@ -14,6 +14,7 @@ import {
 } from 'reactstrap';
 import Swal from 'sweetalert2';
 import DisplayLottie from '../components/DisplayLottie';
+import Snowfall from 'react-snowfall';
 const Date20_10 = () => {
   useEffect(() => {
     document.documentElement.scrollTop = 0;
@@ -21,6 +22,7 @@ const Date20_10 = () => {
   });
   const form = useRef<HTMLFormElement>(null);
   const [send, setSend] = useState(false); // typeScript
+  const [SnowShow, setSnowShow] = useState(false);
 
   const sendRequestPromt = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,25 +35,27 @@ const Date20_10 = () => {
     if (pass === '1234') {
       await Swal.fire({
         icon: 'success',
-        title: 'Thành công',
-        text: 'Bạn là người đặc biệt !',
+        title: 'Mật mã chính xác',
+        text: 'Hãy xem lời nhắn được gửi đến bạn nhé!',
       });
+      setSnowShow(true);
       await Swal.fire({
         title: 'Lời chúc tới',
         text: 'Lời chúc',
         width: 600,
         padding: '3em',
         color: '#000000',
-        background: '#fff url()',
+        background: '#fff url("/img/background/bg.png")',
         backdrop: ` rgba(252, 93, 241, 0.4) url("/gif/meo1.gif") left top no-repeat `,
         showConfirmButton: false,
         timer: 30000,
       });
+      setSnowShow(false);
     } else {
       await Swal.fire({
         icon: 'error',
-        title: 'Thất bại',
-        text: 'Mật mã của bạn không chính xác',
+        title: 'Mật mã không chính xác',
+        text: 'Đừng buồn, có lẽ chưa có ai gửi lời nhắn đến bạn!',
       });
     }
     setSend(false);
@@ -130,6 +134,7 @@ const Date20_10 = () => {
           </div>
         </section>
       </div>
+      {SnowShow ? <Snowfall color="red" snowflakeCount={200} /> : ''}
     </main>
   );
 };
