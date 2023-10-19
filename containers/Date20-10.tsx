@@ -56,8 +56,8 @@ const Date20_10 = () => {
     const inputElement = form.current?.querySelector(
       'textarea[name="your_request"]'
     ) as HTMLTextAreaElement;
-    const pass = inputElement?.value;
-    console.log(pass);
+    const pass = inputElement?.value.replace(/\r?\n/g, '');
+    // console.log(pass);
     if (pass === '1') {
       openThiep('', '', 'nhatkicuame');
     } else if (pass === '12') {
@@ -107,7 +107,7 @@ const Date20_10 = () => {
                           className="form-control-alternative"
                           cols="80"
                           name="your_request"
-                          placeholder=" Hãy nhập mật mã để biết được những lời chúc thầm kín ! (Vui lòng không ấn xuống dòng)"
+                          placeholder=" Hãy nhập mật mã để biết được những lời chúc thầm kín !"
                           rows="2"
                           type="textarea"
                         />
