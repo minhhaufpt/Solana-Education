@@ -12,9 +12,11 @@ import {
   Alert,
   Fade,
 } from 'reactstrap';
+import Music from '../components/Music';
 import Swal from 'sweetalert2';
 import DisplayLottie from '../components/DisplayLottie';
 import Snowfall from 'react-snowfall';
+var nameMusic = 'none';
 const Date20_10 = () => {
   useEffect(() => {
     document.documentElement.scrollTop = 0;
@@ -22,8 +24,32 @@ const Date20_10 = () => {
   });
   const form = useRef<HTMLFormElement>(null);
   const [send, setSend] = useState(false); // typeScript
-  const [SnowShow, setSnowShow] = useState(false);
-
+  const [snowShow, setSnowShow] = useState(false);
+  const [music, setMusic] = useState(false);
+  const openThiep = async (title: string, text: string, nameMus: string) => {
+    await Swal.fire({
+      icon: 'success',
+      title: 'Mật mã chính xác',
+      text: 'Hãy xem lời nhắn được gửi đến bạn nhé!',
+    });
+    setSnowShow(true);
+    nameMusic = nameMus = !'' ? nameMus : 'none';
+    setMusic(true);
+    await Swal.fire({
+      title: title ? title : 'Gửi tới',
+      text: text ? text : 'Lời chúc',
+      width: 600,
+      padding: '3em',
+      color: '#000000',
+      background: '#fff url("/img/background/bg.png")',
+      backdrop: ` rgba(252, 93, 241, 0.4) url("/gif/meo1.gif") left top no-repeat `,
+      showConfirmButton: false,
+      timer: 60000,
+    });
+    setSnowShow(false);
+    setMusic(false);
+    nameMusic = 'none';
+  };
   const sendRequestPromt = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSend(true);
@@ -32,25 +58,16 @@ const Date20_10 = () => {
     ) as HTMLTextAreaElement;
     const pass = inputElement?.value;
     console.log(pass);
-    if (pass === '1234') {
-      await Swal.fire({
-        icon: 'success',
-        title: 'Mật mã chính xác',
-        text: 'Hãy xem lời nhắn được gửi đến bạn nhé!',
-      });
-      setSnowShow(true);
-      await Swal.fire({
-        title: 'Lời chúc tới',
-        text: 'Lời chúc',
-        width: 600,
-        padding: '3em',
-        color: '#000000',
-        background: '#fff url("/img/background/bg.png")',
-        backdrop: ` rgba(252, 93, 241, 0.4) url("/gif/meo1.gif") left top no-repeat `,
-        showConfirmButton: false,
-        timer: 30000,
-      });
-      setSnowShow(false);
+    if (pass === '1') {
+      openThiep('', '', 'nhatkicuame');
+    } else if (pass === '12') {
+      openThiep('', '', 'nuadoituyet');
+    } else if (pass === '123') {
+      openThiep('', '', 'chanhlongthuongco');
+    } else if (pass === '1234') {
+      openThiep('', '', 'xomu');
+    } else if (pass === '12345') {
+      openThiep('', '', 'thangnamkhongquen');
     } else {
       await Swal.fire({
         icon: 'error',
@@ -90,7 +107,7 @@ const Date20_10 = () => {
                           className="form-control-alternative"
                           cols="80"
                           name="your_request"
-                          placeholder=" Hãy nhập mật mã để biết được những lời chúc thầm kín !"
+                          placeholder=" Hãy nhập mật mã để biết được những lời chúc thầm kín ! (Vui lòng không ấn xuống dòng)"
                           rows="2"
                           type="textarea"
                         />
@@ -134,7 +151,12 @@ const Date20_10 = () => {
           </div>
         </section>
       </div>
-      {SnowShow ? <Snowfall color="red" snowflakeCount={200} /> : ''}
+      {snowShow ? <Snowfall color="red" snowflakeCount={200} /> : ''}
+      {music && nameMusic != 'none' ? (
+        <Music name={nameMusic} auto={true} />
+      ) : (
+        ''
+      )}
     </main>
   );
 };
