@@ -123,7 +123,7 @@ export const FamilyMember: Family[] = [
     name: '',
     role : "Người Bà", 
     lottieAnimationFile: '/lottie/grandmother.json', 
-    wish: 'Bà là người sinh thành của đấng sinh thành vì thế không thể nào phủ nhận sự kính trọng của con đối với bà. Nếu bà có nghe được những lời này của con. Con rất mong nghe được bà gọi "cháu ngoan của bà". Con xin lỗi vì đã không trưởng thành nhanh hơn để bà bớt phải lo lắng. Nếu bà có thể lắng nghe được lời con nói thì con xin chúc bà có một ngày thật vui vẻ và mãi bên con. "Còn không" con mong bà ở nơi xa vẫn sẽ nhớ đến đứa cháu của bà.'
+    wish: 'Bà là người sinh thành của đấng sinh thành vì thế không thể nào phủ nhận sự kính trọng của cháu đối với bà. Nếu bà có nghe được những lời này của cháu. Cháu rất mong nghe được bà gọi "cháu ngoan của bà". Cháu xin lỗi vì đã không trưởng thành nhanh hơn để bà bớt phải lo lắng. Nếu bà có thể lắng nghe được lời cháu nói thì cháu xin chúc bà có một ngày thật vui vẻ và mãi bên cháu. "Còn nếu ...", cháu mong bà ở nơi xa vẫn sẽ nhớ đến đứa cháu của bà.'
   },
   {
     name: '',

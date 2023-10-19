@@ -71,8 +71,8 @@ const Date20_10 = () => {
     } else {
       await Swal.fire({
         icon: 'error',
-        title: 'Mật mã không chính xác',
-        text: 'Đừng buồn, có lẽ chưa có ai gửi lời nhắn đến bạn!',
+        title: 'Mật mã không đúng',
+        text: 'Có lẽ chưa có ai gửi lời nhắn đến bạn!',
       });
     }
     setSend(false);
