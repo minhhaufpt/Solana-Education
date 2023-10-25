@@ -62,7 +62,7 @@ const Date20_10 = () => {
       // mẹ
       openThiep(
         'Gửi lời tới mẹ của con',
-        'Con biết nơi quê nhà mẹ vẫn luôn lo lắng cho con, nhưng con nơi xa đã trưởng thành hơn rất nhiều. Con hiểu để sống và tồn tại không dễ nhưng đạo đức và những đức tính tốt con luôn tiếp thu và phát triển, mẹ đừng lo về những tệ nạn nơi sài thành. Vốn dĩ con đủ nhận thức và trưởng thành để nhận ra và tránh xa nó. Nên mẹ yên tâm. Chúc mẹ có một ngày lễ vui vẻ, đầy dức sống và luôn là chỗ dựa cho anh em con. Yêu mẹ ! Nguyễn Minh Hậu',
+        'Con biết nơi quê nhà mẹ vẫn luôn lo lắng cho con, nhưng con nơi xa đã trưởng thành hơn rất nhiều. Con hiểu để sống và tồn tại không dễ nhưng đạo đức và những đức tính tốt con luôn tiếp thu và phát triển, mẹ đừng lo về những tệ nạn nơi sài thành. Vốn dĩ con đủ nhận thức và trưởng thành để nhận ra và tránh xa nó. Nên mẹ yên tâm. Chúc mẹ có một ngày lễ vui vẻ, đầy sức sống và luôn là chỗ dựa cho anh em con. Yêu mẹ ! Nguyễn Minh Hậu',
         'nhatkicuame'
       );
     } else if (pass === 'phuonganhpeiu3322') {

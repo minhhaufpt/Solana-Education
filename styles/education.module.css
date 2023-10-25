@@ -1,0 +1,6 @@
+.walletButtons {
+  margin-top: 1.5rem;
+  display: flex;
+  float: right;
+  gap: 2rem;
+}

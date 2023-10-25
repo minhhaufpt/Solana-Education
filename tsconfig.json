@@ -20,7 +20,8 @@
     "**/*.ts",
     "**/*.tsx",
     "./types",
-    "pages/test/pages.tsx"
+    "pages/test/pages.tsx",
+    "pages/middleware.ts"
   ],
   "exclude": ["node_modules"]
 }

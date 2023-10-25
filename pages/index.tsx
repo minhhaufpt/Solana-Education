@@ -11,7 +11,6 @@ import SEO from '../components/SEO';
 import Contact from '../components/ContactUs';
 import FooterCard from '../components/FooterCard';
 import { GithubUserType } from '../types';
-import Test from '../components/Test';
 
 export default function Home({
   githubProfileData,

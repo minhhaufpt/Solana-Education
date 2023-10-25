@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import Fade from 'react-reveal/Fade';
 import { Col, Container, Row, UncontrolledTooltip } from 'reactstrap';
 import DisplayLottie from '../components/DisplayLottie';
-import { FamilyMember } from '../portfolio';
+import { FamilyMember } from '../contentPosts';
 
 const SildeDate = () => {
   return (
