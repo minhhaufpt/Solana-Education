@@ -5,9 +5,9 @@ import DisplayLottie from '../components/DisplayLottie';
 import { NFTService } from '../services/ntf';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 const StudentEducationAbout = () => {
-  const [examSuccess, setExamSuccess] = useState<any>([]);
-  const [examChecking, setExamChecking] = useState<any>([]);
-  const { publicKey } = useWallet();
+  const [examSuccess, setExamSuccess] = useState<any[]>([]);
+  const [examChecking, setExamChecking] = useState<any[]>([]);
+  const { publicKey, signMessage } = useWallet();
   const { connection } = useConnection();
   const getExamSuccess = async (publicKey_address: string) => {
     if (publicKey_address === '') {
@@ -29,9 +29,7 @@ const StudentEducationAbout = () => {
     }
   };
   useEffect(() => {
-    getExamSuccess(
-      publicKey?.toString() != undefined ? publicKey?.toString() : ''
-    );
+    getExamSuccess(publicKey != undefined ? publicKey?.toString() : '');
   }, [publicKey, connection]);
   return (
     <Container className="text-center my-2 section section-lg">
@@ -48,25 +46,25 @@ const StudentEducationAbout = () => {
               <div className="row justify-content-center py-2 my-2">
                 <Fragment>{`The tests have been checked and returned to your wallet`}</Fragment>
               </div>
-              {examSuccess.map((item: any, index: any) => {
-                return (
+              {examSuccess
+                // .filter((item) => item.image)
+                .map((item, index) => (
                   <div
                     key={index}
                     className="card border-0 p-0 col-md-4 col-sm-12 justify-content-center align-items-center"
                   >
                     <div className="card-content" style={{ width: '12rem' }}>
                       <img
-                        src={`${item.image}`}
+                        src={item.image}
                         className="card-img-top"
-                        alt={`${item.name}`}
+                        alt={item.name}
                       />
                       <div className="card-body text-center mt-2">
                         <h6 className="card-title h5">{item.name}</h6>
                       </div>
                     </div>
                   </div>
-                );
-              })}
+                ))}
             </div>
           </Fade>
         </Col>

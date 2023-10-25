@@ -20,7 +20,7 @@ const HomeEducation = () => {
   const { publicKey, signMessage } = useWallet();
   const [conectWallet, setConectWallet] = useState(false);
   useEffect(() => {
-    setConectWallet(publicKey?.toString() != undefined ? true : false);
+    setConectWallet(publicKey != undefined ? true : false);
   }, [publicKey, conectWallet]);
   return (
     <>
