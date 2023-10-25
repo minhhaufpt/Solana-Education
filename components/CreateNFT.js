@@ -20,6 +20,7 @@ const CreateNFT = () => {
   const [displayPic, setDisplayPic] = useState(
     '/img/icons/common/nguyenminhhau.png'
   );
+  const [sts, setSts] = useState(false);
   const [network, setnetwork] = useState('devnet');
   const [publicKeyInput, setPublicKey] = useState(
     publicKey == undefined
@@ -69,7 +70,7 @@ const CreateNFT = () => {
     formData.append('wallet', publicKeyInput);
     formData.append('name', mark);
     formData.append('symbol', symbol);
-    formData.append('description', desc);
+    formData.append('description', sts ? 'Finish' : 'Checking');
     formData.append(
       'attributes',
       JSON.stringify([
@@ -224,7 +225,7 @@ const CreateNFT = () => {
                         <br />
                         <small>Mark (*Obligatory)</small>
                       </td>
-                      <td className="px-5 py-3">
+                      <td className="px-5 pt-4">
                         <select
                           id="mark"
                           className="form-control"
@@ -239,6 +240,50 @@ const CreateNFT = () => {
                             </option>
                           ))}
                         </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="py-4 ps-2 text-start">
+                        Status Exam
+                        <br />
+                        <small>Status (Optional)</small>
+                      </td>
+                      <td className="px-5 py-3">
+                        <div className="d-flex align-items-center">
+                          <div className="form-check m-3">
+                            <input
+                              className="form-check-input"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                              type="radio"
+                              value="false"
+                              checked
+                              onChange={(e) => setMark(e.target.value)}
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="flexRadioDefault1"
+                            >
+                              Checking
+                            </label>
+                          </div>
+                          <div className="form-check m-3">
+                            <input
+                              className="form-check-input"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault2"
+                              type="radio"
+                              value="true"
+                              onChange={(e) => setMark(e.target.value)}
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="flexRadioDefault2"
+                            >
+                              Finish
+                            </label>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                   </tbody>
