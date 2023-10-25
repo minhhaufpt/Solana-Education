@@ -52,16 +52,28 @@ const HomeEducation = () => {
                     </p>
                     <div className="btn-wrapper my-4">
                       {conectWallet ? (
-                        <Button
-                          className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
-                          color="default"
-                          href={'/education/student'}
-                        >
-                          <span className="btn-inner--icon mr-1">
-                            <i className="fa fa-play" />
-                          </span>
-                          <span className="btn-inner--text">Get Starting</span>
-                        </Button>
+                        <div>
+                          <Button
+                            className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
+                            color="default"
+                            href={'/education/student'}
+                          >
+                            <span className="btn-inner--icon mr-1">
+                              <i className="fa fa-play" />
+                            </span>
+                            <span className="btn-inner--text">{`I'm Student`}</span>
+                          </Button>
+                          <Button
+                            className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
+                            color="default"
+                            href={'/education/teacher'}
+                          >
+                            <span className="btn-inner--icon mr-1">
+                              <i className="fa fa-play" />
+                            </span>
+                            <span className="btn-inner--text">{`I'm Teacher`}</span>
+                          </Button>
+                        </div>
                       ) : (
                         <WalletMultiButtonDynamic />
                       )}

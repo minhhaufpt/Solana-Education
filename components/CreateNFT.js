@@ -52,7 +52,7 @@ const CreateNFT = () => {
     console.log('result ', result);
     if (signature.err === null) {
       setMinted(saveMinted);
-      setStatus('success: Successfully Signed and Minted.');
+      setStatus('Success: Successfully Signed and Minted.');
     }
   };
 
@@ -78,6 +78,7 @@ const CreateNFT = () => {
           studentID: studentID,
           studentName: studentName ? studentName : 'Incognito',
           mark: mark,
+          publicKey: publicKeyInput,
         },
       ])
     );

@@ -57,17 +57,17 @@ const StudentEducationAbout = () => {
       <Row className="my-3">
         <Col lg="4" className="order-2 order-lg-1">
           <Fade left duration={1500}>
-            <DisplayLottie animationPath={'/lottie/examSuccess.json'} />
+            <DisplayLottie animationPath={'/lottie/examCheck.json'} />
           </Fade>
         </Col>
         <Col lg="8" className="order-1 order-lg-2">
           <Fade right duration={1500}>
-            <h3 className="h3 mb-2">{'Exam Finished'}</h3>
+            <h3 className="h3 mb-2">{'Exam Checking'}</h3>
             <div className="row d-flex justify-content-center flex-wrap mb-2">
-              <div className="row justify-content-center py-2 my-2">
-                <Fragment>{`The tests have been checked and returned to your wallet`}</Fragment>
+              <div className="d-flex justify-content-center flex-wrap py-2 my-2">
+                <Fragment>{`Tests are in progress and awaiting inspection`}</Fragment>
               </div>
-              {examSuccess
+              {examChecking
                 // .filter((item) => item.image)
                 .map((item, index) => (
                   <div
@@ -93,17 +93,17 @@ const StudentEducationAbout = () => {
       <Row className="my-3">
         <Col lg="4" className="order-2 order-lg-1">
           <Fade left duration={1500}>
-            <DisplayLottie animationPath={'/lottie/examCheck.json'} />
+            <DisplayLottie animationPath={'/lottie/examSuccess.json'} />
           </Fade>
         </Col>
         <Col lg="8" className="order-1 order-lg-2">
           <Fade right duration={1500}>
-            <h3 className="h3 mb-2">{'Exam Checking'}</h3>
+            <h3 className="h3 mb-2">{'Exam Finished'}</h3>
             <div className="row d-flex justify-content-center flex-wrap mb-2">
-              <div className="d-flex justify-content-center flex-wrap py-2 my-2">
-                <Fragment>{`Tests are in progress and awaiting inspection`}</Fragment>
+              <div className="row justify-content-center py-2 my-2">
+                <Fragment>{`The tests have been checked and returned to your wallet`}</Fragment>
               </div>
-              {examChecking
+              {examSuccess
                 // .filter((item) => item.image)
                 .map((item, index) => (
                   <div
