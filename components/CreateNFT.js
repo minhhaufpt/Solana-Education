@@ -257,8 +257,8 @@ const CreateNFT = () => {
                               id="flexRadioDefault1"
                               type="radio"
                               value="false"
-                              checked
-                              onChange={(e) => setMark(e.target.value)}
+                              checked={!sts}
+                              onChange={(e) => setSts(e.target.value)}
                             />
                             <label
                               className="form-check-label"
@@ -274,7 +274,8 @@ const CreateNFT = () => {
                               id="flexRadioDefault2"
                               type="radio"
                               value="true"
-                              onChange={(e) => setMark(e.target.value)}
+                              checked={sts}
+                              onChange={(e) => setSts(e.target.value)}
                             />
                             <label
                               className="form-check-label"
