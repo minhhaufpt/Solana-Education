@@ -44,6 +44,7 @@ const CreateNFT = () => {
   const [errorRoy, setErrorRoy] = useState();
 
   const [status, setStatus] = useState('Awaiting Upload');
+  const [statusBtn, setStatusBtn] = useState(false);
   const [dispResponse, setDispResp] = useState();
   const [connStatus, setConnStatus] = useState(true);
 
@@ -57,6 +58,7 @@ const CreateNFT = () => {
   };
 
   const mintNow = (e) => {
+    setStatusBtn(true);
     e.preventDefault();
     if (publicKey == undefined) {
       alert('Please select wallet');
@@ -125,6 +127,7 @@ const CreateNFT = () => {
         console.warn(err);
         setStatus('Unsuccessful');
       });
+    setStatusBtn(false);
   };
 
   return (
@@ -258,8 +261,8 @@ const CreateNFT = () => {
                               id="flexRadioDefault1"
                               type="radio"
                               value="false"
-                              checked={!sts}
                               onChange={(e) => setSts(e.target.value)}
+                              checked
                             />
                             <label
                               className="form-check-label"
@@ -275,7 +278,6 @@ const CreateNFT = () => {
                               id="flexRadioDefault2"
                               type="radio"
                               value="true"
-                              checked={sts}
                               onChange={(e) => setSts(e.target.value)}
                             />
                             <label
@@ -293,10 +295,14 @@ const CreateNFT = () => {
                 <div className="p-5 text-center">
                   <button
                     type="submit"
-                    className="btn btn-success button-25"
+                    className={
+                      statusBtn
+                        ? 'btn btn-danger button-25 disabled'
+                        : 'btn btn-success button-25'
+                    }
                     onClick={mintNow}
                   >
-                    Submit
+                    {statusBtn ? 'Processing' : 'Submit'}
                   </button>
                 </div>
               </div>

@@ -51,7 +51,6 @@ const StudentEducationAbout = () => {
     getExamSuccess(publicKey != undefined ? publicKey?.toString() : '');
     getExamChecking(publicKey != undefined ? publicKey?.toString() : '');
   }, [publicKey, connection]);
-
   return (
     <Container className="text-center my-2 section section-lg">
       <Row className="my-3">

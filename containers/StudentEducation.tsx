@@ -23,7 +23,18 @@ const HomeEducation = () => {
                 <Col lg="6">
                   <h1 className="display-3 text-white">FOR STUDENT</h1>
                   <p className="lead text-white">{`Let's look back at your achievements. They can help you feel comfortable and proud of yourself`}</p>
-                  <div className="btn-wrapper my-4"></div>
+                  <div className="btn-wrapper my-4">
+                    <Button
+                      className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
+                      color="default"
+                      href={'/education/teacher'}
+                    >
+                      <span className="btn-inner--icon mr-1">
+                        <i className="fa fa-play" />
+                      </span>
+                      <span className="btn-inner--text">{`Change to teacher`}</span>
+                    </Button>
+                  </div>
                 </Col>
                 <Col lg="6">
                   <DisplayLottie animationPath="/lottie/test.json" />
