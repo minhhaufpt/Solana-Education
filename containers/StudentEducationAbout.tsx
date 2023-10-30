@@ -4,6 +4,53 @@ import { Col, Container, Row } from 'reactstrap';
 import DisplayLottie from '../components/DisplayLottie';
 import { NFTService } from '../services/ntf';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
+import Swal from 'sweetalert2';
+const ProcessingCheck = (item: any) => {
+  Swal.fire({
+    title: item.name,
+    text:
+      'Student : ' +
+      item.attributes[0].studentID +
+      ' - ' +
+      item.attributes[0].studentName,
+    imageUrl: item.image,
+    color: '#002569',
+    imageHeight: 200,
+    imageAlt: item.image,
+    showCancelButton: true,
+    confirmButtonText: 'Report',
+    cancelButtonText: 'Cancel',
+    confirmButtonColor: '#d40000',
+    reverseButtons: true,
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire('Updating', 'Updating functionality', 'info');
+    }
+  });
+};
+const ProcessingDone = (item: any) => {
+  Swal.fire({
+    title: item.name,
+    text:
+      'Student : ' +
+      item.attributes[0].studentID +
+      ' - ' +
+      item.attributes[0].studentName,
+    imageUrl: item.image,
+    color: '#017903',
+    imageHeight: 200,
+    imageAlt: item.image,
+    showCancelButton: true,
+    confirmButtonText: 'Share',
+    cancelButtonText: 'Cancel',
+    confirmButtonColor: '#0199eb',
+    reverseButtons: true,
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire('Updating', 'Updating functionality', 'info');
+    }
+  });
+};
 const StudentEducationAbout = () => {
   const [examSuccess, setExamSuccess] = useState<any[]>([]);
   const [examChecking, setExamChecking] = useState<any[]>([]);
@@ -51,6 +98,7 @@ const StudentEducationAbout = () => {
     getExamSuccess(publicKey != undefined ? publicKey?.toString() : '');
     getExamChecking(publicKey != undefined ? publicKey?.toString() : '');
   }, [publicKey, connection]);
+  const [selectedId, setSelectedId] = useState(null);
   return (
     <Container className="text-center my-2 section section-lg">
       <Row className="my-3">
@@ -78,6 +126,7 @@ const StudentEducationAbout = () => {
                         src={item.image}
                         className="card-img-top"
                         alt={item.name}
+                        onClick={() => ProcessingCheck(item)}
                       />
                       <div className="card-body text-center mt-2">
                         <h6 className="card-title h5">{item.name}</h6>
@@ -114,6 +163,7 @@ const StudentEducationAbout = () => {
                         src={item.image}
                         className="card-img-top"
                         alt={item.name}
+                        onClick={() => ProcessingDone(item)}
                       />
                       <div className="card-body text-center mt-2">
                         <h6 className="card-title h5">{item.name}</h6>
