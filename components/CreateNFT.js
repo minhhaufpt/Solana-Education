@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { signAndConfirmTransactionFe } from '../services/ntf/utilityfunc';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
-const xApiKey = '3rqYpDYWmSPMnc5r'; //Enter Your x-api-key here
+//const xApiKey = '3rqYpDYWmSPMnc5r';
+const xApiKey = 't4K9FOqp7zB6edUu';
 const CreateNFT = () => {
   const { publicKey, signMessage } = useWallet();
   const [studentID, setStudentID] = useState();
@@ -35,6 +36,7 @@ const CreateNFT = () => {
       { studentID: 'PS24488', studentName: 'Nguyễn Minh Hậu', mark: 'A' },
     ])
   );
+  const [category, setCategory] = useState('Other');
   const [extUrl, setExtUrl] = useState();
   const [maxSup, setMaxSup] = useState(0);
   const [roy, setRoy] = useState(99);
@@ -58,14 +60,18 @@ const CreateNFT = () => {
   };
 
   const mintNow = (e) => {
-    setStatusBtn(true);
     e.preventDefault();
+    setStatusBtn(true);
     if (publicKey == undefined) {
       alert('Please select wallet');
+      setStatusBtn(false);
       return;
     } else if (!mark || !studentID || !file) {
       alert('Please complete all information');
+      setStatusBtn(false);
       return;
+    } else if (publicKey?.toString() != publicKeyInput) {
+      setPublicKey(publicKey?.toString());
     }
     let formData = new FormData();
     formData.append('network', network);
@@ -79,6 +85,7 @@ const CreateNFT = () => {
         {
           studentID: studentID,
           studentName: studentName ? studentName : 'Incognito',
+          category: category,
           mark: mark,
           publicKey: publicKeyInput,
         },
@@ -88,16 +95,18 @@ const CreateNFT = () => {
     formData.append('max_supply', maxSup);
     formData.append('royalty', roy);
     formData.append('file', file);
-    formData.append(
-      'service_charge',
-      JSON.stringify({
-        receiver: 'HmWXFySFf9nN5yCYaatZZceJTH4Wd3FdwvhBkiXBHVea',
-        amount: 0.01,
-      })
-    );
+    // formData.append('receiver', publicKeyInput);
+    // formData.append(
+    //   'service_charge',
+    //   JSON.stringify({
+    //     receiver: publicKeyInput,
+    //     amount: 0.005,
+    //   })
+    // );
     axios({
       url: 'https://api.shyft.to/sol/v1/nft/create_detach',
       method: 'POST',
+      maxBodyLength: Infinity,
       headers: {
         'Content-Type': 'multipart/form-data',
         'x-api-key': xApiKey,
@@ -119,15 +128,15 @@ const CreateNFT = () => {
             transaction,
             callback
           );
-          console.log(ret_result);
           setDispResp(res.data);
+          setStatusBtn(false);
         }
       })
       .catch((err) => {
         console.warn(err);
         setStatus('Unsuccessful');
+        setStatusBtn(false);
       });
-    setStatusBtn(false);
   };
 
   return (
@@ -248,6 +257,49 @@ const CreateNFT = () => {
                     </tr>
                     <tr>
                       <td className="py-4 ps-2 text-start">
+                        Category Exam
+                        <br />
+                        <small>Category (Optional)</small>
+                      </td>
+                      <td className="px-5 py-3">
+                        <div className="d-flex align-items-center">
+                          <div className="form-check m-3">
+                            <input
+                              className="form-check-input"
+                              name="flexRadio"
+                              id="flexRadioDefault4"
+                              type="radio"
+                              value="15 minute"
+                              onChange={(e) => setCategory(e.target.value)}
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="flexRadioDefault4"
+                            >
+                              15 minute test
+                            </label>
+                          </div>
+                          <div className="form-check m-3">
+                            <input
+                              className="form-check-input"
+                              name="flexRadio"
+                              id="flexRadioDefault3"
+                              type="radio"
+                              value="1 hour"
+                              onChange={(e) => setCategory(e.target.value)}
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="flexRadioDefault3"
+                            >
+                              1 hour test
+                            </label>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="py-4 ps-2 text-start">
                         Status Exam
                         <br />
                         <small>Status (Optional)</small>
@@ -262,7 +314,6 @@ const CreateNFT = () => {
                               type="radio"
                               value="false"
                               onChange={(e) => setSts(e.target.value)}
-                              checked
                             />
                             <label
                               className="form-check-label"

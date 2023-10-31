@@ -24,7 +24,33 @@ const ProcessingCheck = (item: any) => {
     reverseButtons: true,
   }).then((result) => {
     if (result.isConfirmed) {
-      Swal.fire('Updating', 'Updating functionality', 'info');
+      const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger',
+        },
+        buttonsStyling: false,
+      });
+
+      swalWithBootstrapButtons
+        .fire({
+          title: 'Careful!',
+          text: 'You are sure this test has errors?',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: 'Yes, report it!',
+          cancelButtonText: 'No, nothing!',
+        })
+        .then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Your report has been sent',
+              showConfirmButton: false,
+              timer: 1000,
+            });
+          }
+        });
     }
   });
 };
