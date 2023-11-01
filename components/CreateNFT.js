@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { signAndConfirmTransactionFe } from '../services/ntf/utilityfunc';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
@@ -24,11 +24,7 @@ const CreateNFT = () => {
   );
   const [sts, setSts] = useState(false);
   const [network, setnetwork] = useState('devnet');
-  const [publicKeyInput, setPublicKey] = useState(
-    publicKey == undefined
-      ? 'HmWXFySFf9nN5yCYaatZZceJTH4Wd3FdwvhBkiXBHVea'
-      : publicKey?.toString()
-  );
+  const [publicKeyInput, setPublicKey] = useState(publicKey);
   const [name, setName] = useState();
   const [symbol, setSymbol] = useState('SEM');
   const [desc, setDesc] = useState('Checking');
@@ -66,10 +62,13 @@ const CreateNFT = () => {
     }
     setStatusBtn(false);
   };
+  useEffect(() => {
+    setPublicKey(publicKey);
+  }, [publicKey]);
   const mintNow = (e) => {
     e.preventDefault();
     setStatusBtn(true);
-    if (publicKey == undefined) {
+    if (publicKeyInput == undefined) {
       alert('Please select wallet');
       setStatusBtn(false);
       return;
@@ -78,7 +77,7 @@ const CreateNFT = () => {
       setStatusBtn(false);
       return;
     }
-
+    setPublicKey(publicKey.toString());
     let formData = new FormData();
     formData.append('network', network);
     formData.append('wallet', publicKeyInput);
@@ -357,9 +356,7 @@ const CreateNFT = () => {
                         ? 'btn btn-danger button-25 disabled'
                         : 'btn btn-success button-25'
                     }
-                    onClick={() => {
-                      setPublicKey(publicKey?.toString()), mintNow;
-                    }}
+                    onClick={mintNow}
                   >
                     {statusBtn ? 'Processing' : 'Submit'}
                   </button>
