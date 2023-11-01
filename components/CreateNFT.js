@@ -78,7 +78,8 @@ const CreateNFT = () => {
       alert('Please complete all information');
       setStatusBtn(false);
       return;
-    } else if (publicKey?.toString() != publicKeyInput) {
+    }
+    if (publicKey?.toString() != publicKeyInput) {
       setPublicKey(publicKey?.toString());
     }
     let formData = new FormData();
