@@ -66,7 +66,7 @@ const CreateNFT = () => {
     }
     setStatusBtn(false);
   };
-
+  setPublicKey(publicKey.toString());
   const mintNow = (e) => {
     e.preventDefault();
     setStatusBtn(true);
@@ -80,7 +80,6 @@ const CreateNFT = () => {
       return;
     }
 
-    setPublicKey(publicKey?.toString());
     let formData = new FormData();
     formData.append('network', network);
     formData.append('wallet', publicKeyInput);
@@ -359,7 +358,9 @@ const CreateNFT = () => {
                         ? 'btn btn-danger button-25 disabled'
                         : 'btn btn-success button-25'
                     }
-                    onClick={mintNow}
+                    onClick={() => {
+                      setPublicKey(publicKey?.toString()), mintNow;
+                    }}
                   >
                     {statusBtn ? 'Processing' : 'Submit'}
                   </button>
