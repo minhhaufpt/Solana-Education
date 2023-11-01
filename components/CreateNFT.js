@@ -66,7 +66,6 @@ const CreateNFT = () => {
     }
     setStatusBtn(false);
   };
-  setPublicKey(publicKey.toString());
   const mintNow = (e) => {
     e.preventDefault();
     setStatusBtn(true);
