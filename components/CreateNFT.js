@@ -79,9 +79,8 @@ const CreateNFT = () => {
       setStatusBtn(false);
       return;
     }
-    if (publicKey?.toString() != publicKeyInput) {
-      setPublicKey(publicKey?.toString());
-    }
+
+    setPublicKey(publicKey?.toString());
     let formData = new FormData();
     formData.append('network', network);
     formData.append('wallet', publicKeyInput);
