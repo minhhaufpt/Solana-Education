@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { signAndConfirmTransactionFe } from '../services/ntf/utilityfunc';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
+import Swal from 'sweetalert2';
 //const xApiKey = '3rqYpDYWmSPMnc5r';
 const xApiKey = 't4K9FOqp7zB6edUu';
 const CreateNFT = () => {
@@ -39,7 +40,7 @@ const CreateNFT = () => {
   const [category, setCategory] = useState('Other');
   const [extUrl, setExtUrl] = useState();
   const [maxSup, setMaxSup] = useState(0);
-  const [roy, setRoy] = useState(99);
+  const [roy, setRoy] = useState(0);
 
   const [minted, setMinted] = useState();
   const [saveMinted, setSaveMinted] = useState();
@@ -55,8 +56,15 @@ const CreateNFT = () => {
     console.log('result ', result);
     if (signature.err === null) {
       setMinted(saveMinted);
+      Swal.fire({
+        icon: 'success',
+        title: 'Successfully created NFT',
+        showConfirmButton: false,
+        timer: 1000,
+      });
       setStatus('Success: Successfully Signed and Minted.');
     }
+    setStatusBtn(false);
   };
 
   const mintNow = (e) => {
@@ -95,14 +103,15 @@ const CreateNFT = () => {
     formData.append('max_supply', maxSup);
     formData.append('royalty', roy);
     formData.append('file', file);
-    // formData.append('receiver', publicKeyInput);
-    // formData.append(
-    //   'service_charge',
-    //   JSON.stringify({
-    //     receiver: publicKeyInput,
-    //     amount: 0.005,
-    //   })
-    // );
+    formData.append('receiver', publicKeyInput);
+    formData.append(
+      // Phí do người code dự án đặt ra để thu phí cho dịch vụ này
+      'service_charge',
+      JSON.stringify({
+        receiver: 'HmWXFySFf9nN5yCYaatZZceJTH4Wd3FdwvhBkiXBHVea', // Địa chỉ ví của người thu phí dịch vụ
+        amount: 0.0005,
+      })
+    );
     axios({
       url: 'https://api.shyft.to/sol/v1/nft/create_detach',
       method: 'POST',
@@ -129,7 +138,6 @@ const CreateNFT = () => {
             callback
           );
           setDispResp(res.data);
-          setStatusBtn(false);
         }
       })
       .catch((err) => {
@@ -300,9 +308,9 @@ const CreateNFT = () => {
                     </tr>
                     <tr>
                       <td className="py-4 ps-2 text-start">
-                        Status Exam
+                        Status Exam *
                         <br />
-                        <small>Status (Optional)</small>
+                        <small> ( * Default is Checking )</small>
                       </td>
                       <td className="px-5 py-3">
                         <div className="d-flex align-items-center">
