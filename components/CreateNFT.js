@@ -368,11 +368,11 @@ const CreateNFT = () => {
                 <b>{status}</b>
               </div>
             </div>
-            <div className="text-center">
+            {/* <div className="text-center">
               This creates one of kind NFTs by setting the{' '}
               <code>max_supply</code> parameter to 0. But you can update it
               needed, it should be between <i>0-100</i>.
-            </div>
+            </div> */}
           </div>
         )}
         <div className="p-3 text-center">
