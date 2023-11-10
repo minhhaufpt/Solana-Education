@@ -16,7 +16,11 @@ const Alerts2 = ({txt, time}:info) => {
       toast.onmouseleave = Swal.resumeTimer;
     }
   });
-  return <></>;
+  toast.fire({
+    icon: "success",
+    title: txt,
+  })
+  return <></>
 };
 export default Alerts2;
 
