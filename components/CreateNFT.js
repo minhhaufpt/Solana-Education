@@ -83,7 +83,7 @@ const CreateNFT = () => {
     formData.append('wallet', publicKeyInput);
     formData.append('name', mark);
     formData.append('symbol', symbol);
-    formData.append('description', sts ? 'Finish' : 'Checking');
+    formData.append('description', sts ? 'Checking' : 'Finish');
     formData.append(
       'attributes',
       JSON.stringify([
